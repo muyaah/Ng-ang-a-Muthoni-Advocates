@@ -67,11 +67,11 @@ export function PracticeAreas() {
                 <h3 className="text-2xl font-bold mb-4 group-hover:text-brand-orange transition-colors duration-300">
                   {area.title}
                 </h3>
-                <p className="text-zinc-400 text-sm leading-relaxed mb-6 line-clamp-2 group-hover:line-clamp-none transition-all duration-300">
+                <p className="text-zinc-400 text-sm leading-relaxed mb-6 line-clamp-3 group-hover:line-clamp-none transition-all duration-300">
                   {area.description}
                 </p>
                 <Link 
-                  to={`/services/${area.id}`} 
+                  to="/services" 
                   className="inline-flex items-center gap-2 text-xs font-bold tracking-widest uppercase text-white hover:text-brand-orange transition-colors"
                 >
                   Learn More <ArrowUpRight className="w-4 h-4" />

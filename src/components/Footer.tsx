@@ -7,115 +7,134 @@ import { CONTACT_INFO, FIRM_NAME } from '@/src/lib/constants';
 
 export function Footer() {
   return (
-    <footer className="bg-zinc-50 border-t border-zinc-200 pt-16 pb-8">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <div className="inline-flex items-center justify-center w-12 h-12 bg-brand-blue rounded-full mb-6 text-white">
-            <MessageCircle className="w-6 h-6" />
+    <footer className="bg-white text-zinc-900 pt-0 pb-12 relative overflow-hidden border-t border-zinc-100">
+      {/* Booking Appointment Strip - Orange */}
+      <div className="bg-brand-orange py-16 mb-24">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <div className="inline-flex items-center justify-center w-16 h-16 bg-brand-blue rounded-full mb-8 text-white shadow-lg shadow-brand-blue/20">
+            <MessageCircle className="w-8 h-8" />
           </div>
-          <h2 className="text-4xl font-bold text-zinc-900 mb-4">Book An Appointment Today</h2>
-          <p className="text-zinc-500 max-w-2xl mx-auto mb-8">
-            Book an appointment with our legal experts whenever or wherever you want!
+          <h2 className="text-5xl font-extrabold text-brand-blue mb-6 tracking-tighter">Book An Appointment Today</h2>
+          <p className="text-brand-blue/70 max-w-2xl mx-auto mb-10 text-lg font-medium">
+            Connect with our legal experts across our Nairobi and Limuru offices. We are here to safeguard your interests.
           </p>
-          <Button asChild className="bg-brand-blue hover:bg-brand-blue/90 text-white rounded-full px-8 py-6 text-lg group">
+          <Button asChild className="bg-brand-blue hover:bg-white text-white hover:text-brand-blue rounded-none px-10 py-8 text-xl font-bold group transition-all border-2 border-transparent hover:border-brand-blue">
             <Link to="/booking">
-              Book Appointment <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              Book Appointment <ArrowRight className="ml-3 w-6 h-6 group-hover:translate-x-2 transition-transform" />
             </Link>
           </Button>
         </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-12 mb-16">
-          <div className="lg:col-span-2">
-            <Logo className="mb-6" />
-            <p className="text-zinc-500 text-sm leading-relaxed max-w-xs">
-              Safeguarding our clients' best interests within the four corners of the rule of law.
+      </div>
+      
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-16 mb-24">
+          <div className="lg:col-span-4">
+            <Logo className="mb-8" />
+            <p className="text-zinc-500 text-base leading-relaxed max-w-sm mb-10">
+              Ng'ang'a Muthoni & Company Advocates is committed to listen and safeguard our clients' best interests within the four corners of the rule of law.
             </p>
+            <div className="flex gap-4">
+              <SocialLink href="#" icon={Facebook} />
+              <SocialLink href="#" icon={Twitter} />
+              <SocialLink href="#" icon={Linkedin} />
+              <SocialLink href={`https://wa.me/${CONTACT_INFO.nairobi.whatsapp}`} icon={MessageCircle} />
+            </div>
           </div>
 
-          <div className="lg:col-span-1">
-            <h3 className="text-lg font-bold text-zinc-900 mb-6">Contact</h3>
+          <div className="lg:col-span-4">
+            <h3 className="text-brand-blue font-bold uppercase tracking-widest text-xs mb-8">Our Offices</h3>
+            <div className="space-y-10">
+              {/* Nairobi Office */}
+              <div className="space-y-3">
+                <h4 className="text-zinc-900 font-bold text-lg flex items-center gap-2">
+                  <MapPin className="w-4 h-4 text-brand-orange" /> {CONTACT_INFO.nairobi.name}
+                </h4>
+                <p className="text-zinc-500 text-sm leading-relaxed pl-6">
+                  {CONTACT_INFO.nairobi.address}
+                </p>
+                <div className="pl-6 space-y-2">
+                  <a href={`tel:${CONTACT_INFO.nairobi.phone}`} className="text-zinc-500 hover:text-brand-orange text-sm block transition-colors">
+                    {CONTACT_INFO.nairobi.phone}
+                  </a>
+                  <a href={`mailto:${CONTACT_INFO.nairobi.email}`} className="text-zinc-500 hover:text-brand-orange text-sm block transition-colors">
+                    {CONTACT_INFO.nairobi.email}
+                  </a>
+                </div>
+              </div>
+
+              {/* Limuru Office */}
+              <div className="space-y-3">
+                <h4 className="text-zinc-900 font-bold text-lg flex items-center gap-2">
+                  <MapPin className="w-4 h-4 text-brand-orange" /> {CONTACT_INFO.limuru.name}
+                </h4>
+                <p className="text-zinc-500 text-sm leading-relaxed pl-6">
+                  {CONTACT_INFO.limuru.address}
+                </p>
+                <div className="pl-6 space-y-2">
+                  <a href={`tel:${CONTACT_INFO.limuru.phone}`} className="text-zinc-500 hover:text-brand-orange text-sm block transition-colors">
+                    {CONTACT_INFO.limuru.phone}
+                  </a>
+                  <a href={`mailto:${CONTACT_INFO.limuru.email}`} className="text-zinc-500 hover:text-brand-orange text-sm block transition-colors">
+                    {CONTACT_INFO.limuru.email}
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="lg:col-span-2">
+            <h3 className="text-brand-blue font-bold uppercase tracking-widest text-xs mb-8">Navigation</h3>
             <ul className="space-y-4">
-              <li className="flex items-start gap-3">
-                <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center border border-zinc-200 shadow-sm shrink-0">
-                  <Phone className="w-4 h-4 text-brand-blue" />
-                </div>
-                <div>
-                  <p className="text-sm font-medium text-zinc-900">{CONTACT_INFO.phone}</p>
-                </div>
-              </li>
-              <li className="flex items-start gap-3">
-                <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center border border-zinc-200 shadow-sm shrink-0">
-                  <MapPin className="w-4 h-4 text-brand-blue" />
-                </div>
-                <div>
-                  <p className="text-sm font-medium text-zinc-900">{CONTACT_INFO.address}</p>
-                </div>
-              </li>
-              <li className="flex items-start gap-3">
-                <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center border border-zinc-200 shadow-sm shrink-0">
-                  <Mail className="w-4 h-4 text-brand-blue" />
-                </div>
-                <div>
-                  <p className="text-sm font-medium text-zinc-900">{CONTACT_INFO.email}</p>
-                </div>
-              </li>
+              <FooterLink to="/about">About Us</FooterLink>
+              <FooterLink to="/services">Services</FooterLink>
+              <FooterLink to="/people">Our People</FooterLink>
+              <FooterLink to="/blog">Insights</FooterLink>
+              <FooterLink to="/booking">Booking</FooterLink>
             </ul>
           </div>
 
-          <div>
-            <h3 className="text-lg font-bold text-zinc-900 mb-6">Navigate</h3>
-            <ul className="space-y-3">
-              <li><Link to="/services" className="text-sm text-zinc-500 hover:text-brand-blue transition-colors">Services</Link></li>
-              <li><Link to="/about" className="text-sm text-zinc-500 hover:text-brand-blue transition-colors">Success Stories</Link></li>
-              <li><Link to="/blog" className="text-sm text-zinc-500 hover:text-brand-blue transition-colors">Discover</Link></li>
-              <li><Link to="/people" className="text-sm text-zinc-500 hover:text-brand-blue transition-colors">Our People</Link></li>
-              <li><a href="#" className="text-sm text-zinc-500 hover:text-brand-blue transition-colors">Download Profile</a></li>
-            </ul>
-          </div>
-
-          <div>
-            <h3 className="text-lg font-bold text-zinc-900 mb-6">Solution</h3>
-            <ul className="space-y-3">
-              <li><Link to="/contact" className="text-sm text-zinc-500 hover:text-brand-blue transition-colors">Get in Touch</Link></li>
-              <li><Link to="/services" className="text-sm text-zinc-500 hover:text-brand-blue transition-colors">Technology</Link></li>
-              <li><Link to="/about" className="text-sm text-zinc-500 hover:text-brand-blue transition-colors">Who're We?</Link></li>
-              <li><Link to="/services" className="text-sm text-zinc-500 hover:text-brand-blue transition-colors">Expertise</Link></li>
-            </ul>
-          </div>
-
-          <div>
-            <h3 className="text-lg font-bold text-zinc-900 mb-6">Discover</h3>
-            <ul className="space-y-3">
-              <li><Link to="/blog" className="text-sm text-zinc-500 hover:text-brand-blue transition-colors">Latest News</Link></li>
-              <li><Link to="/blog" className="text-sm text-zinc-500 hover:text-brand-blue transition-colors">New Arrivals</Link></li>
-              <li><Link to="/services" className="text-sm text-zinc-500 hover:text-brand-blue transition-colors">Solution</Link></li>
-              <li><Link to="/people" className="text-sm text-zinc-500 hover:text-brand-blue transition-colors">Gain Profession</Link></li>
-              <li><Link to="/people" className="text-sm text-zinc-500 hover:text-brand-blue transition-colors">Career</Link></li>
-            </ul>
-          </div>
-
-          <div>
-            <h3 className="text-lg font-bold text-zinc-900 mb-6">Follow Us</h3>
-            <ul className="space-y-3">
-              <li><a href="#" className="text-sm text-zinc-500 hover:text-brand-blue transition-colors flex items-center gap-2"><Facebook className="w-4 h-4" /> Facebook</a></li>
-              <li><a href="#" className="text-sm text-zinc-500 hover:text-brand-blue transition-colors flex items-center gap-2"><Instagram className="w-4 h-4" /> Instagram</a></li>
-              <li><a href="#" className="text-sm text-zinc-500 hover:text-brand-blue transition-colors flex items-center gap-2"><Linkedin className="w-4 h-4" /> LinkedIn</a></li>
-              <li><a href="#" className="text-sm text-zinc-500 hover:text-brand-blue transition-colors flex items-center gap-2"><Twitter className="w-4 h-4" /> Twitter</a></li>
-              <li><a href={`https://wa.me/${CONTACT_INFO.whatsapp}`} className="text-sm text-zinc-500 hover:text-brand-blue transition-colors flex items-center gap-2"><MessageCircle className="w-4 h-4" /> WhatsApp</a></li>
+          <div className="lg:col-span-2">
+            <h3 className="text-brand-blue font-bold uppercase tracking-widest text-xs mb-8">Legal</h3>
+            <ul className="space-y-4">
+              <FooterLink to="/privacy">Privacy Policy</FooterLink>
+              <FooterLink to="/terms">Terms of Service</FooterLink>
+              <FooterLink to="/disclaimer">Disclaimer</FooterLink>
             </ul>
           </div>
         </div>
 
-        <div className="border-t border-zinc-200 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-sm text-zinc-400">
-            ©Copyright <span className="text-brand-blue font-medium">NgangaMuthoni.com</span> All rights reserved. 2024
+        <div className="border-t border-zinc-100 pt-12 flex flex-col md:flex-row justify-between items-center gap-6">
+          <p className="text-zinc-400 text-sm">
+            © {new Date().getFullYear()} <span className="text-brand-blue font-medium">Ng'ang'a Muthoni & Co. Advocates</span>. All rights reserved.
           </p>
-          <div className="flex gap-8">
-            <Link to="/privacy" className="text-sm text-zinc-400 hover:text-zinc-600 transition-colors">Privacy & Policy</Link>
-            <Link to="/terms" className="text-sm text-zinc-400 hover:text-zinc-600 transition-colors">Terms & Condition</Link>
+          <div className="flex items-center gap-8 text-zinc-400 text-xs font-medium uppercase tracking-widest">
+            <Link to="/privacy" className="hover:text-brand-orange transition-colors">Privacy</Link>
+            <Link to="/terms" className="hover:text-brand-orange transition-colors">Terms</Link>
+            <Link to="/cookies" className="hover:text-brand-orange transition-colors">Cookies</Link>
           </div>
         </div>
       </div>
     </footer>
+  );
+}
+
+function FooterLink({ to, children }: { to: string; children: React.ReactNode }) {
+  return (
+    <li>
+      <Link to={to} className="text-zinc-500 hover:text-brand-orange text-sm transition-all hover:translate-x-1 inline-block">
+        {children}
+      </Link>
+    </li>
+  );
+}
+
+function SocialLink({ href, icon: Icon }: { href: string; icon: any }) {
+  return (
+    <a 
+      href={href} 
+      className="w-10 h-10 rounded-none border border-zinc-100 flex items-center justify-center text-zinc-400 hover:text-brand-orange hover:border-brand-orange transition-all"
+    >
+      <Icon className="w-4 h-4" />
+    </a>
   );
 }

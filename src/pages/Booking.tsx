@@ -24,31 +24,41 @@ export default function Booking() {
               </p>
 
               <div className="space-y-8">
-                <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 bg-zinc-50 rounded-2xl flex items-center justify-center text-brand-blue border border-zinc-100">
-                    <Phone className="w-5 h-5" />
-                  </div>
-                  <div>
-                    <h4 className="font-bold text-zinc-900">Call Us</h4>
-                    <p className="text-zinc-500">{CONTACT_INFO.phone}</p>
+                {/* Nairobi Office */}
+                <div className="p-6 bg-zinc-50 rounded-3xl border border-zinc-100">
+                  <h3 className="font-bold text-brand-blue mb-4 uppercase tracking-widest text-xs">Nairobi Office</h3>
+                  <div className="space-y-4">
+                    <div className="flex items-start gap-4">
+                      <Phone className="w-5 h-5 text-brand-blue shrink-0 mt-1" />
+                      <p className="text-zinc-600">{CONTACT_INFO.nairobi.phone}</p>
+                    </div>
+                    <div className="flex items-start gap-4">
+                      <Mail className="w-5 h-5 text-brand-blue shrink-0 mt-1" />
+                      <p className="text-zinc-600">{CONTACT_INFO.nairobi.email}</p>
+                    </div>
+                    <div className="flex items-start gap-4">
+                      <MapPin className="w-5 h-5 text-brand-blue shrink-0 mt-1" />
+                      <p className="text-zinc-600">{CONTACT_INFO.nairobi.address}</p>
+                    </div>
                   </div>
                 </div>
-                <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 bg-zinc-50 rounded-2xl flex items-center justify-center text-brand-blue border border-zinc-100">
-                    <Mail className="w-5 h-5" />
-                  </div>
-                  <div>
-                    <h4 className="font-bold text-zinc-900">Email Us</h4>
-                    <p className="text-zinc-500">{CONTACT_INFO.email}</p>
-                  </div>
-                </div>
-                <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 bg-zinc-50 rounded-2xl flex items-center justify-center text-brand-blue border border-zinc-100">
-                    <MapPin className="w-5 h-5" />
-                  </div>
-                  <div>
-                    <h4 className="font-bold text-zinc-900">Visit Us</h4>
-                    <p className="text-zinc-500">{CONTACT_INFO.address}</p>
+
+                {/* Limuru Office */}
+                <div className="p-6 bg-zinc-50 rounded-3xl border border-zinc-100">
+                  <h3 className="font-bold text-brand-blue mb-4 uppercase tracking-widest text-xs">Limuru Office</h3>
+                  <div className="space-y-4">
+                    <div className="flex items-start gap-4">
+                      <Phone className="w-5 h-5 text-brand-blue shrink-0 mt-1" />
+                      <p className="text-zinc-600">{CONTACT_INFO.limuru.phone}</p>
+                    </div>
+                    <div className="flex items-start gap-4">
+                      <Mail className="w-5 h-5 text-brand-blue shrink-0 mt-1" />
+                      <p className="text-zinc-600">{CONTACT_INFO.limuru.email}</p>
+                    </div>
+                    <div className="flex items-start gap-4">
+                      <MapPin className="w-5 h-5 text-brand-blue shrink-0 mt-1" />
+                      <p className="text-zinc-600">{CONTACT_INFO.limuru.address}</p>
+                    </div>
                   </div>
                 </div>
               </div>
