@@ -73,7 +73,7 @@ export default function Services() {
                 transition={{ delay: index * 0.05 }}
                 className="group p-10 rounded-[2.5rem] bg-zinc-50 border border-zinc-100 hover:bg-white hover:shadow-2xl hover:shadow-brand-blue/5 transition-all duration-500 flex flex-col lg:flex-row gap-10 items-start overflow-hidden relative"
               >
-                <div className="w-full lg:w-1/3 h-64 lg:h-full rounded-3xl overflow-hidden shrink-0 relative">
+                <div className="w-full lg:w-1/3 h-64 lg:h-full rounded-3xl overflow-hidden shrink-0 relative border-4 border-brand-orange/20 group-hover:border-brand-orange transition-colors duration-500">
                   <img 
                     src={area.image} 
                     alt={area.title} 

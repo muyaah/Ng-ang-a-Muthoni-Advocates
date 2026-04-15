@@ -50,6 +50,7 @@ export function PracticeAreas() {
               className="group relative h-[400px] overflow-hidden bg-zinc-900"
             >
               {/* Background Image with Overlay */}
+              <div className="absolute inset-x-0 top-0 h-1 bg-brand-orange scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left z-30" />
               <div className="absolute inset-0 z-0">
                 <img 
                   src={area.image} 
