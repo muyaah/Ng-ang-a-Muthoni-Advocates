@@ -1,10 +1,12 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Hero } from '@/src/components/Hero';
 import { CoreValues } from '@/src/components/CoreValues';
 import { PracticeAreas } from '@/src/components/PracticeAreas';
 import { People } from '@/src/components/People';
 import { Clients } from '@/src/components/Clients';
 import { Testimonials } from '@/src/components/Testimonials';
+import { Button } from '@/components/ui/button';
 import { motion } from 'framer-motion';
 
 export default function Home() {
@@ -38,9 +40,11 @@ export default function Home() {
             Our team of experts is ready to provide you with tailored legal solutions that meet your unique needs.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
-            <button className="px-8 py-4 bg-white text-brand-blue font-bold rounded-none hover:bg-brand-orange hover:text-white transition-all duration-300 shadow-xl shadow-black/20">
-              Schedule Consultation
-            </button>
+            <Button asChild className="px-8 py-7 bg-white text-brand-blue font-bold rounded-none hover:bg-brand-orange hover:text-white transition-all duration-300 shadow-xl shadow-black/20 text-lg h-auto">
+              <Link to="/booking">
+                Schedule Consultation
+              </Link>
+            </Button>
             <button className="px-8 py-4 bg-transparent border border-white/30 text-white font-bold rounded-none hover:bg-white/10 transition-all duration-300">
               Download Firm Profile
             </button>

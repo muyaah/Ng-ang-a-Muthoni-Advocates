@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { ArrowRight, Shield, Scale, Users } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -64,8 +65,10 @@ export function Hero() {
             transition={{ duration: 0.5, delay: 0.3 }}
             className="flex flex-col sm:flex-row items-center justify-center gap-4"
           >
-            <Button className="w-full sm:w-auto bg-brand-blue hover:bg-brand-blue/90 text-white rounded-none px-12 py-7 text-lg group shadow-xl shadow-brand-blue/20">
-              Get Started <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+            <Button asChild className="w-full sm:w-auto bg-brand-blue hover:bg-brand-blue/90 text-white rounded-none px-12 py-7 text-lg group shadow-xl shadow-brand-blue/20">
+              <Link to="/booking">
+                Get Started <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              </Link>
             </Button>
           </motion.div>
         </div>
