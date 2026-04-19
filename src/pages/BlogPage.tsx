@@ -59,33 +59,37 @@ export default function BlogPage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
-              className="group cursor-pointer"
+              className="group cursor-pointer flex flex-col h-full"
             >
-              <div className="relative aspect-[16/10] overflow-hidden rounded-3xl mb-6 bg-zinc-100">
+              <div className="relative aspect-[16/10] overflow-hidden rounded-3xl mb-8 bg-zinc-100 shadow-xl shadow-zinc-200/50">
                 <img 
                   src={post.image} 
                   alt={post.title} 
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                   referrerPolicy="no-referrer"
                 />
                 <div className="absolute top-4 left-4">
-                   <span className="px-3 py-1 bg-white/90 backdrop-blur-md text-brand-blue text-[10px] font-bold uppercase tracking-widest rounded-full">
+                   <span className="px-4 py-1.5 bg-white/90 backdrop-blur-md text-brand-blue text-[10px] font-bold uppercase tracking-widest rounded-full shadow-sm">
                      Legal News
                    </span>
                 </div>
               </div>
-              <div className="flex items-center gap-4 text-xs text-zinc-400 mb-4 font-medium uppercase tracking-wider">
-                <span className="flex items-center gap-1"><Calendar className="w-3 h-3" /> {post.date}</span>
-                <span className="flex items-center gap-1"><User className="w-3 h-3" /> {post.author}</span>
-              </div>
-              <h3 className="text-2xl font-bold text-zinc-900 mb-4 group-hover:text-brand-blue transition-colors leading-tight">
-                {post.title}
-              </h3>
-              <p className="text-zinc-500 text-sm leading-relaxed mb-6 line-clamp-3">
-                {post.excerpt}
-              </p>
-              <div className="flex items-center gap-2 text-brand-blue font-bold text-xs uppercase tracking-widest group-hover:gap-4 transition-all">
-                Read Full Article <ArrowRight className="w-4 h-4" />
+              <div className="flex flex-col flex-grow">
+                <div className="flex items-center gap-6 text-[10px] text-zinc-400 mb-4 font-bold uppercase tracking-[0.2em]">
+                  <span className="flex items-center gap-2"><Calendar className="w-3.5 h-3.5 text-brand-orange" /> {post.date}</span>
+                  <span className="flex items-center gap-2"><User className="w-3.5 h-3.5 text-brand-orange" /> {post.author}</span>
+                </div>
+                <h3 className="text-2xl font-bold text-zinc-900 mb-4 group-hover:text-brand-blue transition-colors leading-tight min-h-[3.5rem] flex items-center">
+                  {post.title}
+                </h3>
+                <p className="text-zinc-500 text-sm leading-relaxed mb-8 line-clamp-3">
+                  {post.excerpt}
+                </p>
+                <div className="mt-auto pt-4 flex items-center gap-2 text-brand-blue font-bold text-xs uppercase tracking-widest group-hover:gap-4 transition-all">
+                  <span>Read Full Article</span>
+                  <ArrowRight className="w-4 h-4" />
+                  <div className="h-px bg-brand-blue/20 flex-grow group-hover:bg-brand-blue/40 transition-colors" />
+                </div>
               </div>
             </motion.article>
           ))}

@@ -5,7 +5,7 @@ export const CORE_VALUES = [
     title: "Integrity",
     description: "We uphold the highest ethical standards in all our dealings.",
     icon: "ShieldCheck",
-    image: "https://images.unsplash.com/photo-1593113598332-cd288d649433?auto=format&fit=crop&q=80&w=800",
+    image: "https://images.unsplash.com/photo-1505664194779-8beaceb93744?auto=format&fit=crop&q=80&w=800",
     position: "center"
   },
   {
