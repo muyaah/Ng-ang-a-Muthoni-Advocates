@@ -2,7 +2,7 @@ import React from 'react';
 
 interface LogoProps {
   className?: string;
-  variant?: 'full' | 'icon' | 'inverse';
+  variant?: 'full' | 'icon' | 'inverse' | 'header' | 'footer' | 'accent';
 }
 
 export function Logo({ className = "", variant = 'full' }: LogoProps) {
@@ -11,6 +11,33 @@ export function Logo({ className = "", variant = 'full' }: LogoProps) {
     orange: "#f9ac2c",
     white: "#ffffff"
   };
+
+  if (variant === 'header') {
+    return (
+      <div className={`nmca-brand-link group ${className}`}>
+        <img 
+          src="/NMCA-LOGO-INVERSE-JPG.png" 
+          alt="Ng'ang'a Muthoni & Company Advocates - Home" 
+          className="w-[280px] h-auto transition-all duration-300 ease-in-out group-hover:-translate-y-0.5 group-hover:drop-shadow-[0_0_8px_rgba(249,172,44,1)]"
+          referrerPolicy="no-referrer"
+        />
+      </div>
+    );
+  }
+
+  if (variant === 'footer' || variant === 'accent') {
+    const width = variant === 'accent' ? 'w-[150px]' : 'w-[200px]';
+    return (
+      <div className={`nmca-brand-link group ${className}`}>
+        <img 
+          src="/NMCA-LOGO-INVERSE.svg" 
+          alt="Ng'ang'a Muthoni & Company Advocates" 
+          className={`${width} h-auto block transition-all duration-300 group-hover:drop-shadow-[0_0_5px_rgba(249,172,44,0.6)]`}
+          referrerPolicy="no-referrer"
+        />
+      </div>
+    );
+  }
 
   const isInverse = variant === 'inverse';
   const mainColor = isInverse ? colors.white : colors.blue;

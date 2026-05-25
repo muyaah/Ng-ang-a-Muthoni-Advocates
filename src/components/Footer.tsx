@@ -29,8 +29,8 @@ export function Footer() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-16 mb-24">
           <div className="lg:col-span-4">
-            <Logo className="mb-8" />
-            <p className="text-zinc-500 text-base leading-relaxed max-w-sm mb-10">
+            <Logo variant="footer" className="mb-0" />
+            <p className="text-zinc-500 text-base leading-relaxed max-w-sm mb-10 mt-8">
               Ng'ang'a Muthoni & Company Advocates is committed to listen and safeguard our clients' best interests within the four corners of the rule of law.
             </p>
             <div className="flex gap-4">
